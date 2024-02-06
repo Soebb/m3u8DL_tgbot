@@ -9,7 +9,6 @@ services:
       - TOKEN=<>
       - PREMIUM=False
       - AUTHORIZED_USERS=<>
-    volumes: # if premium,set it
-      - /path/to/app_user.session:/app/app_user.session
+    volumes:
       - /path/to/ytdl-main.session:/app/ytdl-main.session
     restart: always
