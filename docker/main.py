@@ -8,7 +8,7 @@ from downloader import download_and_upload_video
 api_id =  os.environ.get("APP_ID") # Replace with your actual api_id
 api_hash = os.environ.get("APP_HASH")  # Replace with your actual api_hash
 bot_token = os.environ.get("TOKEN")  # Replace with your actual bot_token
-PREMIUM = os.environ.get("PREMIUM") == 'True'
+PREMIUM = os.environ.get("PREMIUM") == 'False'
 
 logging.basicConfig(level=logging.INFO)
 logging.info("PREMIUM: " + str(PREMIUM))
@@ -39,9 +39,9 @@ def handle_message(client: Client, message: types.Message):
     user_message = message.text
     
 
-    if chat_id not in AUTHORIZED_USERS:
-        client.send_message(chat_id, "You are not authorized to use this bot.")
-        return
+    #if chat_id not in AUTHORIZED_USERS:
+        #client.send_message(chat_id, "You are not authorized to use this bot.")
+        #return
 
     if user_message.startswith("https://") or user_message.startswith("http://"):
         # Create a temporary directory for the downloaded video
